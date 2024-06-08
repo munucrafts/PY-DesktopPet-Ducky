@@ -10,5 +10,3 @@
 - Download the repo to your computer.
 - Run the main.py script.
   
-## License
-- Feel free to use or modify this Editor according to your requirements. Attribution is appreciated but not required. If you use this editor, please consider mentioning the author in your project credits or README file.
