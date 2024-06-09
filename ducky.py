@@ -3,13 +3,13 @@ import math
 import random
 
 class ducky():
-    def __init__(self, window, image, position):
+    def __init__(self, window, image, position, quack_image):
         self.window = window
         self.image = image
+        self.quack_image = quack_image
         self.angle = 0
         self.speed = 1
         self.current_sprite = 0
-        self. particle_num = 0
         self.flip = False
         self.position = pygame.Vector2(position)
         self.target_position = pygame.Vector2(500, 500)  
@@ -67,3 +67,11 @@ class ducky():
         if not pygame.mixer.get_busy() :
             if sound:
                 sound.play()
+    
+    def quack_is_angry(self, quack):
+        if quack:
+            radius = 500
+            rand_x = self.position.x + random.randint(-radius, radius)
+            rand_y = self.position.y + random.randint(-radius, radius)
+            self.window.blit(self.quack_image, (rand_x, rand_y))
+            
