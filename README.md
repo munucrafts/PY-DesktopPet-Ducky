@@ -4,7 +4,7 @@
 - I created this Desktop Pet using Python and the PyGame module. Created features such as Ducky Character, Movements, Animation System, Sound on Interaction, etc.
 - Download the executable from here - https://munucrafts.itch.io/pet-ducky
 
-  ![Ducky SS](https://github.com/munucrafts/PY_DesktopDucky/assets/66869650/96389e77-652d-4f59-9b7c-9f6588143769)
+  ![ducky](https://github.com/munucrafts/PY_Desktop_Pet_Ducky/assets/66869650/f09472ab-df11-4ce8-ae76-7d4f85939ac1)
 
 ## How to Run?
 - Download the repo to your computer.
