@@ -9,6 +9,7 @@ class ducky():
         self.quack_image = quack_image
         self.angle = 0
         self.speed = 1
+        self.quack_timer = 0
         self.current_sprite = 0
         self.flip = False
         self.position = pygame.Vector2(position)
@@ -63,15 +64,23 @@ class ducky():
             self.current_sprite = 0
         self.image = sprite_array[int(self.current_sprite)]
 
-    def play_quack_sound(self, sound):
+    def play_quack_sound(self, sound, quack_angry_audio):
         if not pygame.mixer.get_busy() :
-            if sound:
-                sound.play()
+            if self.quack_timer > 5:
+                if quack_angry_audio:
+                    quack_angry_audio.play()
+            else:
+                if sound:
+                    sound.play()
     
-    def quack_is_angry(self, quack):
-        if quack:
-            radius = 500
-            rand_x = self.position.x + random.randint(-radius, radius)
-            rand_y = self.position.y + random.randint(-radius, radius)
-            self.window.blit(self.quack_image, (rand_x, rand_y))
+    def quack_is_angry(self, quack, allow_angry_quack):
+        self.quack_timer += 0.025
+        if allow_angry_quack:
+            if quack and self.quack_timer > 5:
+                radius = 500
+                rand_x = self.position.x + random.randint(-radius, radius)
+                rand_y = self.position.y + random.randint(-radius, radius)
+                self.window.blit(self.quack_image, (rand_x, rand_y))
+        else:
+            self.quack_timer = 0
             
